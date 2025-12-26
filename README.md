@@ -1,6 +1,16 @@
 # CS2103-rag-query
 
-Uses RAG to answer questions about CS2103T course material in the terminal.
+Uses RAG (and the christmas spirit) to answer questions about CS2103T course material in the terminal.
+
+<h3 align="center">The aforementioned christmas spirit in question: </h3>
+<p align="center">
+<img
+   src="https://github.com/user-attachments/assets/cbb84596-54fa-4cf5-8564-d2bddd93b02a"
+   height = "607"
+   object-position: 50% 50%;
+   alt="its only funny cuz i made this during christmas season">
+</p>
+
 
 ## Requirements
 
