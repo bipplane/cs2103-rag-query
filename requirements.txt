@@ -1,0 +1,17 @@
+# Core RAG and LLM frameworks
+langchain
+langchain-community
+langchain-google-genai
+langchain-chroma
+
+# Vector Database
+chromadb
+
+# Environment variables
+python-dotenv
+
+# PDF Loader dependencies
+pymupdf
+pdf2image
+pytesseract
+Pillow
