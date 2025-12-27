@@ -15,3 +15,7 @@ pymupdf
 pdf2image
 pytesseract
 Pillow
+
+# API 
+fastapi
+uvicorn

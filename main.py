@@ -33,10 +33,11 @@ rag_chain = (
     | StrOutputParser()
 )
 
-# 5. Loop to chat
-while True:
-    query = input("\nQuery: ")
-    if query.lower() in ["exit", "quit"]:
-        break
-    response = rag_chain.invoke(query)
-    print(f"Bot: {response}")
+# 5. Loop chat if executing main.py directly
+if __name__ == "__main__":
+    while True:
+        query = input("\nQuery: ")
+        if query.lower() in ["exit", "quit"]:
+            break
+        response = rag_chain.invoke(query)
+        print(f"Bot: {response}")
