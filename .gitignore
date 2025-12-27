@@ -1,3 +1,5 @@
 .env
 .bin
 chromadb/
+__pycache__/
+*.pyc
