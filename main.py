@@ -9,7 +9,7 @@ from langchain_core.output_parsers import StrOutputParser
 load_dotenv()
 
 embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
-vectorstore = Chroma(persist_directory="./chroma_db", embedding_function=embeddings)
+vectorstore = Chroma(persist_directory="./chromadb", embedding_function=embeddings)
 
 # 2. Setup "Retriever" and RAG model
 retriever = vectorstore.as_retriever(search_kwargs={"k": 3}) # Get top 3 most relevant chunks
