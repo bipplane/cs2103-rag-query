@@ -2,7 +2,6 @@ import os
 import re
 import time
 from dotenv import load_dotenv
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_core.documents import Document
@@ -10,7 +9,13 @@ import fitz  # PyMuPDF
 
 load_dotenv()
 
-# Setup embeddings
+# Google API key REQUIRED for embeddings (cuz i didnt test others)
+if not os.getenv("GOOGLE_API_KEY"):
+    print("ERROR: GOOGLE_API_KEY is required for embeddings!")
+    print("Please set GOOGLE_API_KEY in your .env file.")
+    exit(1)
+
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
 
 # Load PDF and extract text (handles both text-based and image-based PDFs)
@@ -42,7 +47,7 @@ if not documents:
     print("ERROR: No text could be extracted from the PDF!")
     exit(1)
 
-# Sanitize Text
+# Sanitise Text
 for document in documents:
     # 1. Replace carriage returns (\r) with newlines (\n)
     document.page_content = document.page_content.replace('\r', '\n')
