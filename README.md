@@ -1,4 +1,4 @@
-# CS2103-rag-query
+# CS2103/T-rag-query
 
 Uses RAG (and the christmas spirit) to answer questions about CS2103/T course material in the terminal.
 
