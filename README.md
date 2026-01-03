@@ -1,6 +1,6 @@
 # CS2103-rag-query
 
-Uses RAG (and the christmas spirit) to answer questions about CS2103T course material in the terminal.
+Uses RAG (and the christmas spirit) to answer questions about CS2103/T course material in the terminal.
 
 <h3 align="center">The aforementioned christmas spirit in question: </h3>
 <p align="center">
@@ -40,12 +40,27 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```env
-GOOGLE_API_KEY=your_api_key_here
+# REQUIRED: Google API key (used for embeddings)
+GOOGLE_API_KEY=your_google_api_key_here
+
+# OPTIONAL: Add one of these to use a different LLM for queries
+# (If not set, Google Gemini will be used for both embeddings and queries)
+
+# OpenAI (for queries)
+# OPENAI_API_KEY=your_openai_api_key_here
+
+# Anthropic Claude (for queries)
+# ANTHROPIC_API_KEY=your_anthropic_api_key_here
 ```
+
+**Note:** 
+- **GOOGLE_API_KEY is required** for document embeddings
+- Optionally add OPENAI_API_KEY or ANTHROPIC_API_KEY to use their LLMs for answering queries
+- Priority for queries: OpenAI → Anthropic → Google (default)
 
 ### 3. Ingest the PDF
 
-Run the ingestor ONCE to process your PDF and create the vector database:
+Run the ingestor **ONCE** to process your PDF and create the vector database:
 
 ```bash
 python ingestor.py
